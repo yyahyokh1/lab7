@@ -1,243 +1,213 @@
 #include <iostream>
 using namespace std;
-int main() {
-    int num,sum=0;
-    for (int i = 0; i <= 10; i++) {
-        cin>>num;
-        sum+=num;
+/*int recursiveProduct(int a,int b) {
+    if (b==0) {
+        return 0;
+    }if (b<0) {
+        return -recursiveProduct(a, -b);
     }
-    cout<<sum;
-    return 0;
-}#include <iostream>
-using namespace std;
-/*double calculateTotal(int item, int quantity) {
-    double price;
-    switch (item) {
-        case 1: price = 10.0; break; // Pizza
-        case 2: price = 8.0; break;  // Burger
-        case 3: price = 5.0; break;  // Salad
-        default: return 0;
+    return a+recursiveProduct(a, b-1);
+}
+int main() {
+    int a; int b;
+    cin>>a>>b;
+    cout<<recursiveProduct(a, b)<<endl;
+}*/
+/*int recursiveFactorial(int n) {
+    if(n == 0) {
+        return 1;
     }
-    return price * quantity;
+        return n * recursiveFactorial(n - 1);
+
 }
-
 int main() {
-    int item, quantity;
-    char choice;
-
-    do {
-        cout << "Menu:\n1. Pizza - $10\n2. Burger - $8\n3. Salad - $5\n";
-        cout << "Enter item number: ";
-        cin >> item;
-        cout << "Enter quantity: ";
-        cin >> quantity;
-
-        double total = calculateTotal(item, quantity);
-        if (total > 0)
-            cout << "Total Bill: $" << total << endl;
-        else
-            cout << "Invalid selection. Try again.\n";
-
-        cout << "Do you want to order more? (y/n): ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    cout << "Thank you for your order!\n";
-
-    return 0;
-}*/
-
-//probelem 2
-/*double calculateFee(int hours) {
-    if (hours <= 2) return 0;
-    if (hours <= 5) return (hours - 2) * 2;
-    return (3 * 2) + (hours - 5) * 5;
-}
-
-int main() {
-    int hours;
-    char choice;
-
-    do {
-        cout << "Enter number of hours parked: ";
-        cin >> hours;
-
-        cout << "Fee: $" << calculateFee(hours) << endl;
-
-        cout << "Process another customer? (y/n): ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    return 0;
-}*/
-
-//problem 3
-/*double balance = 500;
-void deposit(double amount) { balance += amount; }
-void withdraw(double amount) {
-    if (amount > balance) cout << "Insufficient Funds\n";
-    else balance -= amount;
-}
-void checkBalance() { cout << "Balance: $" << balance << endl; }
-
-int main() {
-    int option;
-    double amount;
-    char choice;
-
-    do {
-        cout << "1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit\nEnter option: ";
-        cin >> option;
-
-        switch (option) {
-            case 1: cout << "Enter deposit amount: "; cin >> amount; deposit(amount); break;
-            case 2: cout << "Enter withdrawal amount: "; cin >> amount; withdraw(amount); break;
-            case 3: checkBalance(); break;
-            case 4: cout << "Exiting...\n"; break;
-            default: cout << "Invalid option.\n";
-        }
-
-        cout << "Perform another transaction? (y/n): ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    return 0;
-}*/
-
-//problem 4
-/*double calculateCost(int movie, int tickets) {
-    double price;
-    switch (movie) {
-        case 1: price = 8.0; break;
-        case 2: price = 10.0; break;
-        case 3: price = 12.0; break;
-        default: return 0;
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    if (n<0) {
+        cout << "The factorial is not defined for negative numbers" << endl;
+    }else{
+        int result = recursiveFactorial(n);
+        cout << result<< endl;
     }
-    return price * tickets;
-}
-
-int main() {
-    int movie, tickets;
-    char choice;
-
-    do {
-        cout << "Movies:\n1. Movie A - $8\n2. Movie B - $10\n3. Movie C - $12\nSelect movie: ";
-        cin >> movie;
-        cout << "Enter number of tickets: ";
-        cin >> tickets;
-
-        double total = calculateCost(movie, tickets);
-        if (total > 0)
-            cout << "Total Cost: $" << total << endl;
-        else
-            cout << "Invalid selection.\n";
-
-        cout << "Book another movie? (y/n): ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    return 0;
 }*/
-//problem 5
-/*double calculateFare(int train, int tickets) {
-    double price;
-    switch (train) {
-        case 1: price = 15.0; break;
-        case 2: price = 20.0; break;
-        case 3: price = 25.0; break;
-        default: return 0;
+/*int recursiveFibonacci(int n) {
+    if (n == 0 ) {
+        return 0;
+    }if (n == 1) {
+        return 1;
     }
-    return price * tickets;
+    return recursiveFibonacci(n-1) + recursiveFibonacci(n-2);
 }
-
 int main() {
-    int train, tickets;
-    char choice;
-
-    do {
-        cout << "Trains:\n1. Train X - $15\n2. Train Y - $20\n3. Train Z - $25\nSelect train: ";
-        cin >> train;
-        cout << "Enter number of tickets: ";
-        cin >> tickets;
-
-        double total = calculateFare(train, tickets);
-        if (total > 0)
-            cout << "Total Fare: $" << total << endl;
-        else
-            cout << "Invalid selection.\n";
-
-        cout << "Book another train? (y/n): ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    return 0;
+    int n;
+    cin >> n;
+    int result = recursiveFibonacci(n);
+    cout << result << endl;
 }*/
-
-//problem 6
-/*bool isStrongPassword(string password) {
-    bool hasUpper = false, hasLower = false, hasDigit = false, hasSpecial = false;
-    string specialChars = "!@#$%^&*()";
-
-    if (password.length() < 8) return false;
-
-    for (char ch : password) {
-        if (isupper(ch)) hasUpper = true;
-        if (islower(ch)) hasLower = true;
-        if (isdigit(ch)) hasDigit = true;
-        if (specialChars.find(ch) != string::npos) hasSpecial = true;
+/*int recursiveSumOfNaturalNumbers(int n) {
+    if (n == 0) {
+        return 0;
     }
-    return hasUpper && hasLower && hasDigit && hasSpecial;
+    return n + recursiveSumOfNaturalNumbers(n - 1);
+}
+int main() {
+    int n;
+    cin >> n;
+    cout << recursiveSumOfNaturalNumbers(n) << endl;
+}*/
+/*void recursiveDescendingOrder(int n) {
+    if (n < 1) {
+        return ;
+    }
+    cout << n << " ";
+    return recursiveDescendingOrder(n - 1);
+}
+int main() {
+    int n;
+    cin >> n;
+    recursiveDescendingOrder(n);
+    cout<<endl;
+}*/
+/*int recursiveNumOfDigits(int n) {
+    if (n == 0) {
+        return 0;
+    }if (n < 0) {
+        n=-n;
+    }
+    return 1 + recursiveNumOfDigits(n / 10);
+}
+int main() {
+    int number;
+    cin >> number;
+    int result = recursiveNumOfDigits(number);
+    cout << result << endl;
+}*/
+/*int recursiveSumOffDigits(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    return n % 10 + recursiveSumOffDigits(n / 10);
+
+}
+int main() {
+    int n;
+    cin >> n;
+    cout << recursiveSumOffDigits(n) << endl;
+}*/
+/*int recursivePowerOfNumber(int n,int m) {
+    if (n == 0) return 1;
+    return recursivePowerOfNumber(m,n - 1) * m;
+}
+int main() {
+    int a,b;
+    cin >> a>>b;
+    int result = pow(a,b);
+    cout << result << endl;
+}*/
+/*int recursiveReverseTheDigits(int n, int rev) {
+    if (n == 0) {
+        return rev;
+    }
+    return recursiveReverseTheDigits(n / 10, rev * 10+ n % 10);
+}
+int main() {
+    int n;
+    cin >> n;
+    cout << recursiveReverseTheDigits(n, 0);
+}*/
+/*int countDigits(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    return 1 + countDigits(n / 10);
+}
+
+
+int getDigit(int n, int pos) {
+    for (int i = 0; i < pos; i++) {
+        n /= 10;
+    }
+    return n % 10;
+}
+
+bool isPalindromeHelper(int n, int left, int right) {
+    if (left >= right) {
+        return true;
+    }
+
+    if (getDigit(n, left) != getDigit(n, right)) {
+        return false;
+    }
+
+    return isPalindromeHelper(n, left + 1, right - 1);
+}
+
+bool isPalindrome(int n) {
+    if (n < 0) {
+        return false;
+    }
+    int digits = countDigits(n);
+    return isPalindromeHelper(n, 0, digits - 1);
 }
 
 int main() {
-    string password;
-    cout << "Enter password: ";
-    cin >> password;
+    int num;
 
-    if (isStrongPassword(password))
-        cout << "Strong Password\n";
-    else
-        cout << "Weak Password\n";
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (isPalindrome(num)) {
+        cout << num << " is a palindrome." << endl;
+    } else {
+        cout << num << " is not a palindrome." << endl;
+    }
 
     return 0;
 }*/
 
+/*bool isPrime(int n, int divisor = 2) {
+    if (n <= 1) {
+        return false;
+    }
+    if (divisor > std::sqrt(n)) {
+        return true;
+    }
+    if (n % divisor == 0) {
+        return false;
+    }
 
-//problem 7
-/*bool isLeapYear(int year) {
-    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    return isPrime(n, divisor + 1);
 }
 
-bool isValidDate(int day, int month, int year) {
-    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (month == 2 && isLeapYear(year)) daysInMonth[1] = 29;
-    return (month >= 1 && month <= 12 && day >= 1 && day <= daysInMonth[month - 1]);
-}
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
 
-void nextDate(int &day, int &month, int &year) {
-    if (!isValidDate(day, month, year)) {
-        cout << "Invalid date!\n";
+    if (isPrime(n)) {
+        std::cout << n << " is a prime number." << std::endl;
+    } else {
+        std::cout << n << " is not a prime number." << std::endl;
+    }
+
+    return 0;
+}*/
+/*void towerOfHanoi(int N, char source, char destination, char auxiliary) {
+    if (N == 1) {
+        cout << "Move disk 1 from " << source << " to " << destination << endl;
         return;
     }
-
-    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (month == 2 && isLeapYear(year)) daysInMonth[1] = 29;
-
-    if (++day > daysInMonth[month - 1]) {
-        day = 1;
-        if (++month > 12) {
-            month = 1;
-            year++;
-        }
-    }
-
-    cout << "Next Date: " << day << "/" << month << "/" << year << endl;
+    towerOfHanoi(N - 1, source, auxiliary, destination);
+    cout << "Move disk " << N << " from " << source << " to " << destination << endl;
+    towerOfHanoi(N - 1, auxiliary, destination, source);
 }
 
 int main() {
-    int day, month, year;
-    cout << "Enter date (dd mm yyyy): ";
-    cin >> day >> month >> year;
-    nextDate(day, month, year);
+    int N;
+    cout << "Enter the number of disks: ";
+    cin >> N;
+    towerOfHanoi(N, 'A', 'C', 'B');
+
     return 0;
 }*/
